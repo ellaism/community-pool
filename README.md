@@ -207,6 +207,10 @@ You have to train this. The most people who haven't worked with screen until now
 
 Now, you have done the hardest part. Look into screen -list and look into the running processes and what they do. This will be your main job now, to hold these processes running. Good luck. :-) 
 
+Cheers
+Chris 
+Teams Minerpool.net / Pirl / Ellaism
+
 Please keep in mind, that beeing a good pool operator is a full time job with supporting the miners, supporting the pool, solving problems, keeping the security, and so on. 
 
 You should get a shh key and change ssh to only allow the login with a key instead of password authentication. Furthermore you should read more about linux server security and linux server backups, especially for a backup of the redis database you are using now.  
