@@ -34,7 +34,16 @@ now you want to edit the main config file for the js web:
 ```bash
 nano ~/community-pool/www/config/environment.js
 ```
-here you change the domain in the APP: { } Block to yours, after saving and closing you want to compile your poolweb:
+here you change the domain in the APP: { } Block to yours 
+
+now we make the necessary files executable:
+```bash
+chmod +x ~/community-pool/ellapool
+chmod +x ~/community-pool/poolstart.sh
+chmod +x ~/community-pool/www/build.sh
+```
+
+after you have done this you want to compile your poolweb now:
 ```bash
 cd ~/community-pool/www/
 ./build.sh
@@ -76,12 +85,6 @@ server {
 Save it and restart the nginx:
 ```bash
 service nginx restart
-```
-
-now we make the necessary files executable:
-```bash
-chmod +x ~/community-pool/ellapool
-chmod +x ~/community-pool/poolstart.sh
 ```
 
 download the parity deb and install it: 
