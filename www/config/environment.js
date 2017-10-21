@@ -19,11 +19,11 @@ module.exports = function(environment) {
 
       // HTTP mining endpoint
       HttpHost: 'http://example.net',
-      HttpPort: 8888,
+      HttpPort: 8822,
 
       // Stratum mining endpoint
       StratumHost: 'example.net',
-      StratumPort: 8008,
+      StratumPort: 8002,
 
       // Fee and payout details
       PoolFee: '1%',
