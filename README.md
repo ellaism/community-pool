@@ -12,7 +12,7 @@ curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo add-apt-repository ppa:gophers/archive
 sudo apt update && sudo apt upgrade && sudo apt dist-upgrade
 
-sudo apt-get install golang-1.8-go nodejs nginx redis-server git nano screen dpkg wget
+sudo apt-get install golang-1.8-go nodejs nginx redis-server git nano screen dpkg wget fail2ban iptables iptables-persistent
 ```
 
 Now we clone the repo into your home-folder ~ :
@@ -109,4 +109,31 @@ unlocker.json at the end of the config file in "unlocker" > "poolfeeaddress"
 nano ~/community-pool/unlocker.json
 ```
 
+now we are ready and start the pool the first time:
+```bash
+~/community-pool/poolstart.sh
+```
 
+we look if all processes are basically online, to do this use:
+```bash
+screen -list
+```
+you should see all screens of all pool processes in the output, then you can go on... 
+
+now we implement some basic security while the parity is syncing in the background.
+
+fail2ban is still running, nevertheless, to make it harder to attack you we change the ssh port now:
+```bash
+nano /etc/ssh/sshd_config
+
+Set Port to something you can remember, e.g.:
+Port 2288
+```
+save it, close nano, restart ssh
+```bash
+service restart ssh
+```
+
+Please remember, the next time you have to connect yourself to the new SSH port too! 
+
+Now we set some simple iptables rules to drop all other shit away, presuming 2288 for ssh as for now:
