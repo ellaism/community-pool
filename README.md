@@ -190,6 +190,22 @@ Now point a worker to it and try out the function of the pool.
 
 We recommend that you have a look into the new Eminer Project, cause this has still really nice functions with the builtin dashboard and free cloud service.
 
+Now to the daily things. We still looked into the screen -list one time. 
+The screen processes there have self explaining names. 
+So start with looking into the parity screen to see parity working:
+```
+screen -r ellaparity
+```
+DON'T DO ctrl+c or something under any circumstances, cause this will close the screen session and stop the process!!!
+
+To detach from the screen session and go back to your starting shell use the Key-Combination:
+```
+CTRL + a (at same time, then release completely and press quick) d 
+```
+
+You have to train this. The most people who haven't worked with screen until now have problems the first minutes to hit the right combination and speed of the keystrokes. Train it. It will work without any problems as soon as you know how to do this key combination. But again, DON'T PRESS something like ctrl + c or such under any circumstances cause it will kill your process!!!
+
+Now, you have done the hardest part. Look into screen -list and look into the running processes and what they do. This will be your main job now, to hold these processes running. Good luck. :-) 
 
 Please keep in mind, that beeing a good pool operator is a full time job with supporting the miners, supporting the pool, solving problems, keeping the security, and so on. 
 
