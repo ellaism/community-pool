@@ -208,7 +208,9 @@ You have to train this. The most people who haven't worked with screen until now
 Now, you have done the hardest part. Look into screen -list and look into the running processes and what they do. This will be your main job now, to hold these processes running. Good luck. :-) 
 
 Cheers
+
 Chris 
+
 Teams Minerpool.net / Pirl / Ellaism
 
 P.S.:
