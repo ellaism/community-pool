@@ -211,7 +211,7 @@ Cheers
 
 Chris 
 
-Teams Minerpool.net / Pirl / Ellaism
+Teams Minerpool.net / Pirl.io / Ellaism.com
 
 P.S.:
 Please keep in mind, that beeing a good pool operator is a full time job with supporting the miners, supporting the pool, solving problems, keeping the security, and so on. 
