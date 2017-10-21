@@ -211,6 +211,7 @@ Cheers
 Chris 
 Teams Minerpool.net / Pirl / Ellaism
 
+P.S.:
 Please keep in mind, that beeing a good pool operator is a full time job with supporting the miners, supporting the pool, solving problems, keeping the security, and so on. 
 
 You should get a shh key and change ssh to only allow the login with a key instead of password authentication. Furthermore you should read more about linux server security and linux server backups, especially for a backup of the redis database you are using now.  
