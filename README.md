@@ -28,6 +28,15 @@ npm install -g ember-cli@2.9.1
 npm install -g bower
 npm install
 bower install
+```
+
+now you want to edit the main config file for the js web:
+```bash
+nano ~/community-pool/www/config/environment.js
+```
+here you change the domain in the APP: { } Block to yours, after saving and closing you want to compile your poolweb:
+```bash
+cd ~/community-pool/www/
 ./build.sh
 ```
 
@@ -137,3 +146,40 @@ service restart ssh
 Please remember, the next time you have to connect yourself to the new SSH port too! 
 
 Now we set some simple iptables rules to drop all other shit away, presuming 2288 for ssh as for now:
+```bash
+nano /etc/iptables/rules.v4
+```
+fill in there some basic rules:
+```bash
+*filter
+
+# Accepts all established inbound connections
+-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+# Allows all outbound traffic
+# You could modify this to only allow certain traffic, you don't want to unless you know what you are doing!
+-A OUTPUT -j ACCEPT
+# Allow pool connections from anywhere
+-A INPUT -p tcp --dport 80 -j ACCEPT
+-A INPUT -p tcp --dport 8002 -j ACCEPT
+-A INPUT -p tcp --dport 8822 -j ACCEPT
+# Allows SSH connections 
+# The --dport number is the same as in /etc/ssh/sshd_config you changed before
+-A INPUT -p tcp -m state --state NEW --dport 2288 -j ACCEPT
+# Allow ping
+-A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT
+# log iptables denied calls (access via 'dmesg' command)
+-A INPUT -m limit --limit 5/min -j LOG --log-prefix "iptables denied: " --log-level 7
+# Reject all other inbound - default deny unless explicitly allowed policy:
+-A INPUT -j REJECT
+-A FORWARD -j REJECT
+
+COMMIT
+
+```
+save it, then you can activate it, and write reformatted back to the file:
+```bash
+ iptables-restore < /etc/iptables/rules.v4
+ iptables-save > /etc/iptables/rules.v4
+```
+
+
