@@ -182,4 +182,17 @@ save it, then you can activate it, and write reformatted back to the file:
  iptables-save > /etc/iptables/rules.v4
 ```
 
+Now you can open your browser and point it to your pool domain. 
+
+Congratulations, you've setup your first own pool.
+
+Now point a worker to it and try out the function of the pool.
+
+We recommend that you have a look into the new Eminer Project, cause this has still really nice functions with the builtin dashboard and free cloud service.
+
+
+Please keep in mind, that beeing a good pool operator is a full time job with supporting the miners, supporting the pool, solving problems, keeping the security, and so on. 
+
+You should get a shh key and change ssh to only allow the login with a key instead of password authentication. Furthermore you should read more about linux server security and linux server backups, especially for a backup of the redis database you are using now.  
+
 
