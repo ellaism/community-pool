@@ -12,7 +12,7 @@ curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo add-apt-repository ppa:gophers/archive
 sudo apt update && sudo apt upgrade && sudo apt dist-upgrade
 
-sudo apt-get install golang-1.8-go nodejs nginx redis-server git nano screen
+sudo apt-get install golang-1.8-go nodejs nginx redis-server git nano screen dpkg wget
 ```
 
 Now we clone the repo into your home-folder ~ :
@@ -75,4 +75,38 @@ chmod +x ~/community-pool/ellapool
 chmod +x ~/community-pool/poolstart.sh
 ```
 
-to be continued
+download the parity deb and install it: 
+```bash
+wget https://parity-downloads-mirror.parity.io/v1.8.1/x86_64-unknown-linux-gnu/parity_1.8.1_amd64.deb
+dpkg -i ./x86_64-unknown-linux-gnu/parity_1.8.1_amd64.deb
+```
+
+now create a password file and write a password in, your server wallet will use:
+```bash
+nano ~/community-pool/.walletpass
+
+```
+
+now you create your server wallet:
+```bash
+parity account new --password="~/community-pool/.walletpass"
+```
+
+copy the output and fill it into 3 files:
+
+poolstart.sh in the startup of parity 2 times:
+```bash
+nano ~/community-pool/poolstart.sh
+```
+
+payout.json at the end of the config file in "payouts" > "address":
+```bash
+nano ~/community-pool/payout.json
+```
+
+unlocker.json at the end of the config file in "unlocker" > "poolfeeaddress"
+```bash
+nano ~/community-pool/unlocker.json
+```
+
+
