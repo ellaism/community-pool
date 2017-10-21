@@ -2,6 +2,9 @@
 
 We presume an running Ubuntu 16.04 LTS Installation
 
+The ELLA Community pool contains a pre-build binary with 50% Community share to the community wallet. If you don't want to do these donations you have to change the unlocker.json to donate => false but we hope that you will share it with the community.
+
+
 Install necessary basic requirements:
 ```bash
 sudo apt-get install python-software-properties
