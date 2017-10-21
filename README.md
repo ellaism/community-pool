@@ -203,7 +203,7 @@ To detach from the screen session and go back to your starting shell use the Key
 CTRL + a (at same time, then release completely and press quick) d 
 ```
 
-You have to train this. The most people who haven't worked with screen until now have problems the first minutes to hit the right combination and speed of the keystrokes. Train it. It will work without any problems as soon as you know how to do this key combination. But again, DON'T PRESS something like ctrl + c or such under any circumstances cause it will kill your process!!!
+You have to train this. The most people who haven't worked with screen until now have problems the first minutes to hit the right combination and speed of the keystrokes. Train it. Really, just do it now. Train it, train it, TRAIN IT! It will work without any problems as soon as you know how to do this key combination. But again, DON'T PRESS something like ctrl + c or such under any circumstances cause it will kill your process!!!
 
 Now, you have done the hardest part. Look into screen -list and look into the running processes and what they do. This will be your main job now, to hold these processes running. Good luck. :-) 
 
