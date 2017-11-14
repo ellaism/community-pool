@@ -155,12 +155,17 @@ nano /etc/iptables/rules.v4
 fill in there some basic rules:
 ```bash
 *filter
+:INPUT DROP [0:0]
+:FORWARD DROP [0:0]
+:OUTPUT ACCEPT [0:0]
 
 # Accepts all established inbound connections
 -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 # Allows all outbound traffic
 # You could modify this to only allow certain traffic, you don't want to unless you know what you are doing!
 -A OUTPUT -j ACCEPT
+# Allow all localhost source traffic ie, your proxie stuff from ember
+-A INPUT -s 127.0.0.1/32 -j ACCEPT
 # Allow pool connections from anywhere
 -A INPUT -p tcp --dport 80 -j ACCEPT
 -A INPUT -p tcp --dport 8002 -j ACCEPT
